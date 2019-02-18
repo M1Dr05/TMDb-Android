@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TMDB</string>
+
+    <string name="failed_again">Algo no está bien, inténtalo de nuevo.</string>
+    <string name="enter_your_search">Ingrese su busqueda.</string>
+    <string name="without_results">Sin resultados</string>
+    <string name="edt_hint_search">Películas, series y personas</string>
+    <string name="movies">Películas</string>
+    <string name="tv_shows">Series</string>
+    <string name="seasons">"Temporadas: "</string>
+    <string name="episodes">"Episodios: "</string>
+    <string name="overview">Sinopsis:</string>
+    <string name="images">Imágenes</string>
+    <string name="videos">Videos</string>
+    <string name="more_similar">Mas similares</string>
+    <string name="licence_youtube">Licencia de YouTube estándar</string>
+    <string name="search">Buscar</string>
+    <string name="popular">Popular</string>
+    <string name="top_rating">Mejor valoradas</string>
+    <string name="upcoming">Próximamente</string>
+    <string name="tv_on_air">En Televisión</string>
+    <string name="now_playing">En cartelera</string>
+    <string name="tv_airing_today">Se emiten hoy</string>
+    <string name="biography">Biografia:</string>
+    <string name="birthday">Fecha de nacimiento:</string>
+    <string name="place_of_birth">Lugar de nacimiento:</string>
+    <string name="billed_cast">Elenco facturado</string>
+    <string name="navigation_drawer_open">Abrir drawer</string>
+    <string name="navigation_drawer_close">Cerrar drawer</string>
+    <string name="see_all">VER TODO</string>
+    <string name="status">Estado:</string>
+    <string name="runtime">Duración:</string>
+    <string name="homepage">Página Web:</string>
+    <string name="budget">Presupuesto:</string>
+    <string name="revenue">Recaudación:</string>
+    <string name="user_score">Puntuación\nde usuario</string>
+    <string name="open_with_youtube">Abrir en youtube</string>
+    <string name="share_in">Compartir en</string>
+    <string name="no_biography">No tenemos una biografía para</string>
+</resources>

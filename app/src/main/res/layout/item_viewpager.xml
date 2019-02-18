@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="270dp"
+    android:background="@color/colorPrimaryDark"
+    android:paddingBottom="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/img_backdrop"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/click_open_video"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_height="match_parent"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_play_circle_outline_black_24dp"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:id="@+id/cardview_pager"
+            app:cardCornerRadius="5dp"
+            android:layout_height="150dp">
+
+            <RelativeLayout
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:id="@+id/click_open_detail">
+
+                <ImageView
+                    android:id="@+id/img_poster"
+                    android:layout_width="110dp"
+                    android:layout_height="150dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ic_placeholder"
+                    android:scaleType="centerCrop" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/cardview_pager"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/id_text"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:id="@+id/title_view"
+                android:textColor="@color/colorWhite"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_favorite_black_24dp" />
+
+                <TextView
+                    android:id="@+id/vote_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

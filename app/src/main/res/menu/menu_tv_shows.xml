@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/popular"
+        android:icon="@drawable/ic_trending_up_black_24dp"
+        app:showAsAction="ifRoom|withText"
+        android:id="@+id/nav_popular_tv"/>
+
+    <item android:id="@+id/nav_top_rating_tv"
+        android:title="@string/top_rating"
+        android:icon="@drawable/ic_stars_black_24dp"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item android:title="@string/tv_on_air"
+        android:icon="@drawable/ic_tv_black_24dp"
+        android:id="@+id/nav_air_tv"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item android:title="@string/tv_airing_today"
+        android:icon="@drawable/ic_live_tv_black_24dp"
+        android:id="@+id/nav_today_tv"
+        app:showAsAction="ifRoom|withText"/>
+
+
+
+</menu>

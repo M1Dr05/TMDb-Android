@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryMedium</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:statusBarColor">@color/colorBlackTransp</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:navigationBarColor">@color/colorBlackTransp</item>
+    </style>
+
+    <style name="AppTheme.Toolbar">
+        <item name="android:background">@color/colorPrimaryMedium</item>
+    </style>
+
+    <style name="AppTheme.Link">
+        <item name="colorAccent">@color/colorWhite</item>
+    </style>
+
+    <style name="AppTheme.Scroll">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/colorBlackTransp</item>
+    </style>
+
+    <style name="AppTheme.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Widget.MPM.Menu.Dark_Custom">
+        <item name="android:colorBackground">@color/mpm_material_grey_850</item>
+        <item name="android:theme">@style/Theme.AppCompat</item>
+        <item name="mpm_primaryTextColor">@color/mpm_white</item>
+        <item name="mpm_secondaryTextColor">@color/mpm_white_70_opacity</item>
+        <item name="mpm_activeIconColor">@null</item>
+        <item name="mpm_separatorColor">@color/mpm_white_12_opacity</item>
+    </style>
+
+</resources>

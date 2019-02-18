@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:id="@+id/click_adapter_default"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:focusable="true">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            app:cardCornerRadius="5dp"
+            android:layout_height="130dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="130dp"
+                android:id="@+id/img_poster"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/title_adapter"
+                style="@style/Base.TextAppearance.AppCompat.Large" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_event_black_24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/colorWhiteGray"
+                    style="@style/Base.TextAppearance.AppCompat.Small"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/date_adapter"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhiteGray"
+                android:id="@+id/genero_adapter"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_star_black_24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhiteGray"
+                    android:id="@+id/rating_adapter"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

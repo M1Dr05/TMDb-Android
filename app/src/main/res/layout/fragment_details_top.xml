@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack">
+
+
+    <org.song.videoplayer.DemoQSVideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/video_player"/>
+
+    <!--<FrameLayout
+        android:id="@+id/youtube_fragment_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>-->
+
+    <ImageView
+        android:id="@+id/img_trailer_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progress_details_top"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/failed_again"
+        android:visibility="gone"
+        android:id="@+id/failed_details_top"
+        android:textColor="@color/colorWhite"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:id="@+id/click_trailers_top"
+        android:gravity="center"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_height="match_parent"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_play_circle_outline_black_24dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        android:id="@+id/click_keyboard_top"
+        android:background="@drawable/circle_color_transp"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_keyboard_arrow_down_white_24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/click_menu_external_top"
+        android:elevation="5dp"
+        android:background="@drawable/circle_color_transp"
+        android:gravity="center"
+        android:layout_toStartOf="@+id/click_menu_top"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_launch_white_24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        android:id="@+id/click_menu_top"
+        android:elevation="5dp"
+        android:background="@drawable/circle_color_transp"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_more_vert_white_24dp" />
+    </LinearLayout>
+
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:paddingStart="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/color_gradient"
+        style="@style/Base.TextAppearance.AppCompat.Large"
+        android:id="@+id/title_details_top"
+        android:textColor="@color/colorWhite"/>-->
+
+</RelativeLayout>

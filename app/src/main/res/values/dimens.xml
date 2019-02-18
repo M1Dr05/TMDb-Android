@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="top_fragment_height">200dp</dimen>
+    <dimen name="top_fragment_margin">10dp</dimen>
+    <dimen name="top_fragment_bottom">160dp</dimen>
+
+    <item name="x_scale_factor" format="float" type="dimen">2.3</item>
+    <item name="y_scale_factor" format="float" type="dimen">2.3</item>
+    <dimen name="divider_height">1dp</dimen>
+
+
+</resources>

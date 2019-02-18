@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:background="@color/colorPrimaryMedium"
+        android:focusable="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/list_search"
+            android:visibility="gone"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/connect_search"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_conexion"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/failed_again"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_your_search"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/txt_view_search"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/without_results"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/txt_no_data"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

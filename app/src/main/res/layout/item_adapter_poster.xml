@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="165dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="5dp"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:id="@+id/click_adapter_horizontal"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:transitionName="image"
+                android:background="@drawable/ic_placeholder"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:id="@+id/linear_text"
+                android:background="@drawable/color_gradient"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:maxLines="2"
+                    style="@style/Base.TextAppearance.AppCompat.Small" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
