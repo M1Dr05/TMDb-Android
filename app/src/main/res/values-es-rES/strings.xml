@@ -38,4 +38,13 @@
     <string name="open_with_youtube">Abrir en youtube</string>
     <string name="share_in">Compartir en</string>
     <string name="no_biography">No tenemos una biografía para</string>
+    <string name="people">Personas</string>
+    <string name="about">Acerca de</string>
+    <string name="social_media">Red social</string>
+    <string name="discover">Descubrir</string>
+    <string name="home">Inicio</string>
+    <string name="in_theaters">En teatro</string>
+    <string name="decease">Fallecimiento:</string>
+    <string name="a_review_by">"Una revisión por "</string>
+    <string name="title_dialog">Mensaje</string>
 </resources>
