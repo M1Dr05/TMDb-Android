@@ -3,6 +3,10 @@ A simple Android client for The Movie DB
 
 This project is an Android app which displays data from [The Movie Database](https://www.themoviedb.org/) The Movie Database API.
 
+<a href="https://play.google.com/store/apps/details?id=com.github.midros.tmdb">
+  <img src="https://github.com/M1Dr05/TMDb/blob/master/screenshots/unnamed.png" width="150" height="54">
+</a>
+
 # Features
 - Get Movies
   - Get the Popular Movies
@@ -38,6 +42,7 @@ ext {
 - [RxKotlin 2](https://github.com/ReactiveX/RxKotlin)
 - [RxAndroid 2](https://github.com/ReactiveX/RxAndroid)
 - [DraggablePanel](https://github.com/pedrovgs/DraggablePanel) - DEPRECATED
+- [QSVideoPlayer](https://github.com/tohodog/QSVideoPlayer)
 - [Gson](https://github.com/google/gson)
 - [Glide](https://github.com/bumptech/glide)
 - [MaterialSearchView](https://github.com/MiguelCatalan/MaterialSearchView)
