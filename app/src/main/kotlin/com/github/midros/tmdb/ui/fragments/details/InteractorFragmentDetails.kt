@@ -3,20 +3,11 @@ package com.github.midros.tmdb.ui.fragments.details
 import android.content.Context
 import androidx.fragment.app.FragmentManager
 import com.github.midros.tmdb.data.api.NewsApi
-import com.github.midros.tmdb.data.model.PojoDetailsPerson
-import com.github.midros.tmdb.data.model.ObjectsCast
-import com.github.midros.tmdb.data.model.ObjectImages
-import com.github.midros.tmdb.data.model.ObjectMovies
-import com.github.midros.tmdb.data.model.PojoDetailsMovies
-import com.github.midros.tmdb.data.model.ObjectTrailers
-import com.github.midros.tmdb.data.model.ObjectTv
-import com.github.midros.tmdb.data.model.PojoDetailsTv
 import com.github.midros.tmdb.ui.activities.base.BaseInteractor
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.e
-import com.github.midros.tmdb.utils.getApiKeyTmdb
+import com.github.midros.tmdb.utils.ConstFun.e
+import com.github.midros.tmdb.utils.ConstFun.getApiKeyTmdb
 import com.github.midros.tmdb.utils.schedulers.SchedulerProvider
-import io.reactivex.Single
 import javax.inject.Inject
 
 /**

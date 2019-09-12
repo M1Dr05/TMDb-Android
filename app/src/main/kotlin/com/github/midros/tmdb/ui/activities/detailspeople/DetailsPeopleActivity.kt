@@ -5,15 +5,10 @@ import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import android.os.Handler
-import android.transition.ChangeBounds
-import android.transition.ChangeImageTransform
-import android.transition.Fade
-import android.transition.TransitionSet
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.daimajia.androidanimations.library.Techniques
 import com.github.midros.tmdb.R
@@ -24,6 +19,14 @@ import com.github.midros.tmdb.ui.adapters.adapterimages.ViewPagerImagesPeople
 import com.github.midros.tmdb.ui.adapters.adaptermovie.RecyclerAdapterMovies
 import com.github.midros.tmdb.ui.adapters.adaptertv.RecyclerAdapterTvShows
 import com.github.midros.tmdb.utils.*
+import com.github.midros.tmdb.utils.ConstFun.setImagePeopleUrl
+import com.github.midros.tmdb.utils.ConstFun.showPopupMenuExternal
+import com.github.midros.tmdb.utils.ConstFun.animatedView
+import com.github.midros.tmdb.utils.ConstFun.getReformatDate
+import com.github.midros.tmdb.utils.ConstFun.openActivityBrowser
+import com.github.midros.tmdb.utils.ConstFun.openActivityImage
+import com.github.midros.tmdb.utils.ConstFun.openImagesActivity
+import com.github.midros.tmdb.utils.ConstFun.openShareIn
 import com.github.midros.tmdb.utils.ConstStrings.Companion.ID
 import com.github.midros.tmdb.utils.ConstStrings.Companion.IMAGE
 import com.github.midros.tmdb.utils.ConstStrings.Companion.PERSON
@@ -207,7 +210,7 @@ class DetailsPeopleActivity : BaseActivity(), InterfaceDetailsPeople.View, Recyc
     }
 
     override fun setDataImagesPeople(data: ObjectImagesPerson) {
-        if (!data.profiles.isEmpty()) {
+        if (data.profiles.isNotEmpty()) {
             adapterImages.setType(2)
             for (images in data.profiles) adapterImages.addItem(images)
             view_images_person.show()
@@ -234,7 +237,7 @@ class DetailsPeopleActivity : BaseActivity(), InterfaceDetailsPeople.View, Recyc
     }
 
     override fun setDataMovieCredits(list: MutableList<PojoResultsMovie>) {
-        if (!list.isEmpty()) {
+        if (list.isNotEmpty()) {
             list.sortBy { it.release_date }
             list.reverse()
             adapterMovieCredits.setType(2)
@@ -259,7 +262,7 @@ class DetailsPeopleActivity : BaseActivity(), InterfaceDetailsPeople.View, Recyc
     }
 
     override fun setDataTvCredits(list: MutableList<PojoResultsTv>) {
-        if (!list.isEmpty()){
+        if (list.isNotEmpty()){
             list.sortBy { it.first_air_date }
             list.reverse()
             adapterTvCredits.setType(2)

@@ -20,7 +20,7 @@ import dagger.Component
  * Created by luis rafael on 16/02/19.
  */
 @PerActivity
-@Component(dependencies = arrayOf(AppsComponent::class), modules = arrayOf(ActivityModule::class))
+@Component(dependencies = [AppsComponent::class], modules = [ActivityModule::class])
 interface ActivityComponent {
 
     fun inject(splashActivity: SplashActivity)

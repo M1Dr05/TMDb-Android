@@ -26,7 +26,6 @@ class RecyclerAdapterMovies @Inject constructor(private var context: Context) : 
     private var list: MutableList<PojoResultsMovie> = mutableListOf()
     private var onItemMovieClickListener: OnItemMovieClickListener? = null
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
             viewTypeMovieHorizontal-> ViewHolderMovieHorizontal(context.inflateLayout(R.layout.item_adapter_poster, parent, false))
@@ -35,15 +34,14 @@ class RecyclerAdapterMovies @Inject constructor(private var context: Context) : 
         }
     }
 
-    override fun getItemCount(): Int = list.size
-
-    override fun getItemViewType(position: Int): Int {
-        return when (viewType) {
+    override fun getItemViewType(position: Int): Int = when (viewType) {
             2 -> viewTypeMovieHorizontal
             3 -> viewTypeMovieCount3
             else -> viewTypeMovieDefault
         }
-    }
+
+
+    override fun getItemCount(): Int = list.size
 
     fun setType(type:Int){
         this.viewType = type

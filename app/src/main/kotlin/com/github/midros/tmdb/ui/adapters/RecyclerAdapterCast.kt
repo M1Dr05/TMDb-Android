@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.github.midros.tmdb.R
 import com.github.midros.tmdb.data.model.ObjectsDetailsCast
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.setImagePeopleUrl
+import com.github.midros.tmdb.utils.ConstFun.setImagePeopleUrl
 import com.pawegio.kandroid.inflateLayout
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.item_cast.view.*

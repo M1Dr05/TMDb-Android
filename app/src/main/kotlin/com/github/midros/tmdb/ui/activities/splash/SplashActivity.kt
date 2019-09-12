@@ -7,9 +7,8 @@ import com.github.midros.tmdb.data.model.ObjectGenders
 import com.github.midros.tmdb.ui.activities.base.BaseActivity
 import com.github.midros.tmdb.data.preference.DataSharePreference.setGenderMovie
 import com.github.midros.tmdb.data.preference.DataSharePreference.setGenderTvShow
-import com.github.midros.tmdb.utils.fadeZoomTransitionActivity
-import com.github.midros.tmdb.utils.openActivityMain
-import com.github.midros.tmdb.utils.schedulers.SchedulerProvider
+import com.github.midros.tmdb.utils.ConstFun.fadeZoomTransitionActivity
+import com.github.midros.tmdb.utils.ConstFun.openActivityMain
 import kotlinx.android.synthetic.main.activity_splash.*
 import javax.inject.Inject
 

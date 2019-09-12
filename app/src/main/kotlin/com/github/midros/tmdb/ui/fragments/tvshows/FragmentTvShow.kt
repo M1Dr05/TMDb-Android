@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.midros.tmdb.R
 import com.github.midros.tmdb.ui.activities.base.BaseFragment
-import com.github.midros.tmdb.utils.removeShiftMode
+import com.github.midros.tmdb.utils.ConstFun.removeShiftMode
 import kotlinx.android.synthetic.main.fragment_tv_show.*
 import javax.inject.Inject
 

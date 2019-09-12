@@ -39,6 +39,7 @@ interface InterfaceFragmentDetails {
         fun showPlayer()
         fun hiddenViewsPlayer()
         fun showViewsPlayer()
+        fun onDestroyPlayer()
 
         fun getIdDetails(): Int
         fun showDataDetails()

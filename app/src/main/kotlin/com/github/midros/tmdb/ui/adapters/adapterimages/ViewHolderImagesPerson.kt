@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.github.midros.tmdb.data.model.ObjectsDetailsImages
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.setImageUrl
+import com.github.midros.tmdb.utils.ConstFun.setImageUrl
 import com.pawegio.kandroid.hide
 import kotlinx.android.synthetic.main.item_adapter_poster.view.*
 

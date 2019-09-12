@@ -97,6 +97,5 @@ class InteractorMain<V : InterfaceMainView> @Inject constructor(supportFragment:
         trans.setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
         trans.replace(R.id.frame_principal, fragment, ConstStrings.TYPE_FRAGMENT)
         trans.commitNow()
-
     }
 }

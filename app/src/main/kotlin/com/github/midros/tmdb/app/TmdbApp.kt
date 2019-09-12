@@ -1,9 +1,9 @@
 package com.github.midros.tmdb.app
 
 import android.app.Application
+import com.github.midros.tmdb.R
 import com.github.midros.tmdb.di.components.AppsComponent
 import com.github.midros.tmdb.di.components.DaggerAppsComponent
-import com.github.midros.tmdb.di.modules.AppModule
 import com.github.midros.tmdb.di.modules.NetModule
 
 /**
@@ -17,7 +17,7 @@ class TmdbApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        component = DaggerAppsComponent.builder().netModule(NetModule(this)).appModule(AppModule(this)).build()
+        component = DaggerAppsComponent.builder().netModule(NetModule(this)).build()
         component.inject(this)
     }
 

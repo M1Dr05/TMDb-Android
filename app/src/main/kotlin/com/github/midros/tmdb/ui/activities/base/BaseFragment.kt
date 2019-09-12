@@ -68,6 +68,7 @@ abstract class BaseFragment : Fragment(), InterfaceView {
         fun setCueVideo(key: String)
         fun setSelectedNavigationMovie(itemId:Int)
         fun setSelectedNavigationTv(itemId: Int)
+        fun moveActivityToBack()
     }
 
 

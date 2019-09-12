@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">TMDB</string>
 
+    <string name="link_github" translatable="false">https://github.com/M1Dr05/TMDb</string>
+    <string name="link_tmdb" translatable="false">https://www.themoviedb.org/documentation/api</string>
+
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
     <string name="failed_again">Something is not right, try again.</string>
@@ -10,7 +13,7 @@
     <string name="movies">Movies</string>
     <string name="tv_shows">Tv Shows</string>
     <string name="seasons">"Seasons: "</string>
-    <string name="episodes">"Episodes: "</string>
+    <string name="episodes">Episodes:</string>
     <string name="overview">Overview:</string>
     <string name="images">Images</string>
     <string name="videos">Videos</string>
@@ -33,7 +36,7 @@
     <string name="homepage">Homepage:</string>
     <string name="budget">Budget:</string>
     <string name="revenue">Revenue:</string>
-    <string name="user_score">User\nScore</string>
+    <string name="user_score">User Score</string>
     <string name="open_with_youtube">Open with youtube</string>
     <string name="share_in">Share in</string>
     <string name="people">People</string>
@@ -46,5 +49,10 @@
     <string name="no_biography">We do not have a biography for</string>
     <string name="a_review_by">A review by</string>
     <string name="title_dialog">Message</string>
+    <string name="github" translatable="false">Github</string>
+    <string name="themoviedb_api" translatable="false">TheMovieDb Api</string>
+    <string name="rate_me">Rate me</string>
+    <string name="share">Share</string>
+    <string name="this_app_uses_the_movie_db_api_but_is_not_endorsed_or_certified_by_the_movie_db">This app uses TheMovieDb api but is not endorsed or certified by TheMovieDb</string>
 
 </resources>

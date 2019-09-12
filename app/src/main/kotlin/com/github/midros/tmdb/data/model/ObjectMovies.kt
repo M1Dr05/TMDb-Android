@@ -1,5 +1,6 @@
 package com.github.midros.tmdb.data.model
 
+import androidx.annotation.Nullable
 import java.io.Serializable
 
 
@@ -37,8 +38,8 @@ data class PojoDetailsMovies(
         var status: String,
         var runtime: Int,
         var homepage: String,
-        var budget: Int,
-        var revenue: Int
+        var budget: Long,
+        var revenue: Long
 ) : Serializable
 
 data class ObjectMoviePerson(val cast:MutableList<PojoResultsMovie>) : Serializable

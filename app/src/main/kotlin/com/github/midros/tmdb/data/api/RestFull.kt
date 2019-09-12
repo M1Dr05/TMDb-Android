@@ -2,9 +2,9 @@ package com.github.midros.tmdb.data.api
 
 import com.github.midros.tmdb.data.model.*
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.getApiKeyTmdb
-import com.github.midros.tmdb.utils.getCountry
-import com.github.midros.tmdb.utils.getLocale
+import com.github.midros.tmdb.utils.ConstFun.getApiKeyTmdb
+import com.github.midros.tmdb.utils.ConstFun.getCountry
+import com.github.midros.tmdb.utils.ConstFun.getLocale
 import io.reactivex.Single
 import javax.inject.Inject
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack">
@@ -61,23 +62,42 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="15dp"
         android:id="@+id/click_keyboard_top"
         android:background="@drawable/circle_color_transp"
         android:gravity="center"
         android:elevation="5dp"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_keyboard_arrow_down_white_24dp" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_keyboard_arrow_down_white_24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/click_window_float_top"
+        android:elevation="5dp"
+        android:background="@drawable/circle_color_transp"
+        android:gravity="center"
+        android:layout_toStartOf="@+id/click_menu_external_top"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_window_float_white_24dp"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/click_menu_external_top"
         android:elevation="5dp"
         android:background="@drawable/circle_color_transp"
@@ -85,14 +105,15 @@
         android:layout_toStartOf="@+id/click_menu_top"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_launch_white_24dp" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_launch_white_24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="15dp"
         android:id="@+id/click_menu_top"
         android:elevation="5dp"
         android:background="@drawable/circle_color_transp"
@@ -100,9 +121,10 @@
         android:gravity="center"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_more_vert_white_24dp" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_more_vert_white_24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <!--<TextView

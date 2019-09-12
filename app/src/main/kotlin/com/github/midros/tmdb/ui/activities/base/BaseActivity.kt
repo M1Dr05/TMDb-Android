@@ -69,5 +69,6 @@ abstract class BaseActivity : AppCompatActivity(), InterfaceView, BaseFragment.C
     override fun isMaximized(): Boolean = true
     override fun setSelectedNavigationMovie(itemId: Int) {}
     override fun setSelectedNavigationTv(itemId: Int) {}
+    override fun moveActivityToBack() {}
 
 }

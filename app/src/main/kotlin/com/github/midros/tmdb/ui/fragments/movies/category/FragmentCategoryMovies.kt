@@ -11,7 +11,7 @@ import com.github.midros.tmdb.ui.activities.base.BaseFragment
 import com.github.midros.tmdb.ui.adapters.adaptermovie.RecyclerAdapterMovies
 import com.github.midros.tmdb.utils.ConstStrings
 import com.github.midros.tmdb.utils.OnScrollListenerUtils
-import com.github.midros.tmdb.utils.animatedView
+import com.github.midros.tmdb.utils.ConstFun.animatedView
 import com.daimajia.androidanimations.library.Techniques
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.runDelayedOnUiThread
@@ -31,6 +31,7 @@ class FragmentCategoryMovies : BaseFragment(), InterfaceCategoryMovies.ViewCateg
 
     @field:Named(ConstStrings.DEFAULT)
     @Inject lateinit var lManager: GridLayoutManager
+
 
     fun newInstance(category: String): FragmentCategoryMovies {
         val fragment = FragmentCategoryMovies()
@@ -97,6 +98,7 @@ class FragmentCategoryMovies : BaseFragment(), InterfaceCategoryMovies.ViewCateg
     }
 
     private fun showList(){
+        hiddenLoading()
         runDelayedOnUiThread(200) {
             if (progress_movies != null) progress_movies.hide()
             if (list_movies != null) {

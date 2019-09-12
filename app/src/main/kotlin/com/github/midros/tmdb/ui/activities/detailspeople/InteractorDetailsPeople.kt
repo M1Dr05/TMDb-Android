@@ -5,8 +5,8 @@ import androidx.fragment.app.FragmentManager
 import com.github.midros.tmdb.data.api.NewsApi
 import com.github.midros.tmdb.ui.activities.base.BaseInteractor
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.e
-import com.github.midros.tmdb.utils.getApiKeyTmdb
+import com.github.midros.tmdb.utils.ConstFun.e
+import com.github.midros.tmdb.utils.ConstFun.getApiKeyTmdb
 import com.github.midros.tmdb.utils.schedulers.SchedulerProvider
 import javax.inject.Inject
 

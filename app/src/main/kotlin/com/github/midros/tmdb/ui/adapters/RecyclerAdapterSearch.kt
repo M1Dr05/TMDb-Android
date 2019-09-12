@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.midros.tmdb.R
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.setImageUrl
+import com.github.midros.tmdb.utils.ConstFun.setImageUrl
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.pawegio.kandroid.inflateLayout

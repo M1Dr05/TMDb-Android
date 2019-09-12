@@ -18,6 +18,8 @@ class ConstStrings {
         const val SIZE_IMG_YOUTUBE = "/mqdefault.jpg"
         const val BASE_URL_APP_YOUTUBE = "vnd.youtube:"
         const val BASE_URL_BROWSER_YOUTUBE = "http://www.youtube.com/watch?v="
+        const val BASE_URL_BROWSER_PLAY = "https://play.google.com/store/apps/details?id="
+        const val BASE_URL_APP_PLAY = "market://details?id="
 
         const val BASE_URL_APP_FB = "fb://facewebmodal/f?href="
         const val BASE_URL_BROWSER_FB = "https://www.facebook.com/"

@@ -11,6 +11,12 @@ import android.view.ViewGroup
 import com.github.midros.tmdb.R
 import com.github.midros.tmdb.ui.activities.base.BaseFragment
 import com.github.midros.tmdb.ui.adapters.*
+import com.github.midros.tmdb.utils.ConstFun.getReformatDate
+import com.github.midros.tmdb.utils.ConstFun.getFormattedDollars
+import com.github.midros.tmdb.utils.ConstFun.animatedView
+import com.github.midros.tmdb.utils.ConstFun.openActivityPeople
+import com.github.midros.tmdb.utils.ConstFun.openActivityBrowser
+import com.github.midros.tmdb.utils.ConstFun.openImagesActivity
 import com.github.midros.tmdb.data.model.*
 import com.github.midros.tmdb.utils.*
 import com.daimajia.androidanimations.library.Techniques
@@ -18,7 +24,6 @@ import com.github.midros.tmdb.ui.adapters.adaptermovie.RecyclerAdapterMovies
 import com.github.midros.tmdb.ui.adapters.adapterimages.RecyclerAdapterImages
 import com.github.midros.tmdb.ui.adapters.adaptertv.RecyclerAdapterTvShows
 import com.pawegio.kandroid.*
-import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.fragment_details_bottom.*
 import javax.inject.Inject
 import javax.inject.Named
@@ -66,10 +71,10 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        onClickConnetFailed()
+        onClickConnectFailed()
     }
 
-    private fun onClickConnetFailed() {
+    private fun onClickConnectFailed() {
         connect_details_bottom.setOnClickListener {
             setDetailsBottom(id!!, type!!)
         }
@@ -182,7 +187,7 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     }
 
     override fun setReviews(list: MutableList<ObjectDetailsReviews>) {
-        if (!list.isEmpty()){
+        if (list.isNotEmpty()){
             pagerAdapter.addItems(list)
             view_reviews_bottom.show()
             animatedView(Techniques.FadeIn,view_reviews_bottom,1000)
@@ -201,7 +206,7 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     }
 
     override fun setCast(list: MutableList<ObjectsDetailsCast>) {
-        if (!list.isEmpty()) {
+        if (list.isNotEmpty()) {
             for (cast in list) adapterCast.addItem(cast)
             view_cast_bottom.show()
             animatedView(Techniques.FadeIn, view_cast_bottom, 1000)
@@ -224,7 +229,7 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     }
 
     override fun setTrailers(list: MutableList<ObjectDetailsTrailers>) {
-        if (!list.isEmpty()) {
+        if (list.isNotEmpty()) {
             for (trailers in list) adapterTrailers.addItem(trailers)
             view_trailer_bottom.show()
             animatedView(Techniques.FadeIn, view_trailer_bottom, 1000)
@@ -246,7 +251,7 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     }
 
     override fun setImages(data: ObjectImages) {
-        if (!data.backdrops.isEmpty()) {
+        if (data.backdrops.isNotEmpty()) {
             adapterImages.setType(1)
             for (images in data.backdrops) adapterImages.addItem(images)
             view_images_bottom.show()
@@ -271,7 +276,7 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     }
 
     override fun setDataSimilarMovie(list: MutableList<PojoResultsMovie>) {
-        if (!list.isEmpty()) {
+        if (list.isNotEmpty()) {
             adapterSimilarMovie.setType(3)
             for (movie in list) adapterSimilarMovie.addItem(movie)
             setAdapterRecycler(adapterSimilarMovie)
@@ -285,7 +290,7 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     }
 
     override fun setDataSimilarTv(list: MutableList<PojoResultsTv>) {
-        if (!list.isEmpty()) {
+        if (list.isNotEmpty()) {
             adapterSimilarTv.setType(3)
             for (tv in list) adapterSimilarTv.addItem(tv)
             setAdapterRecycler(adapterSimilarTv)
@@ -330,5 +335,6 @@ class FragmentDetailsBottom : BaseFragment(), InterfaceFragmentDetails.View, Rec
     override fun getIdDetails(): Int = 0
     override fun setDataTrailer(data: ObjectTrailers) {}
     override fun setDataExternalIds(data: ObjectExternalIds) {}
+    override fun onDestroyPlayer() {}
 
 }

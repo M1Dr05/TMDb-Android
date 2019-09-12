@@ -2,26 +2,23 @@ package com.github.midros.tmdb.ui.fragments.details
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.appcompat.view.menu.MenuBuilder
-import androidx.appcompat.view.menu.MenuPopupHelper
-import androidx.appcompat.widget.PopupMenu
-import android.util.SparseArray
 import android.view.*
-import at.huber.youtubeExtractor.VideoMeta
-import at.huber.youtubeExtractor.YouTubeExtractor
-import at.huber.youtubeExtractor.YtFile
 import com.github.midros.tmdb.R
 import com.github.midros.tmdb.data.model.*
 import com.github.midros.tmdb.ui.activities.base.BaseFragment
-import com.github.midros.tmdb.ui.fragments.details.InteractorFragmentDetails
-import com.github.midros.tmdb.utils.*
-import com.github.midros.tmdb.utils.ConstStrings.Companion.BASE_URL_BROWSER_YOUTUBE
-import com.github.midros.tmdb.utils.schedulers.SchedulerProvider
-import com.github.zawadz88.materialpopupmenu.popupMenu
+import com.github.midros.tmdb.utils.ConstFun.showPopupMenuExternal
+import com.github.midros.tmdb.utils.ConstFun.getUrlYoutube
+import com.github.midros.tmdb.utils.ConstFun.setImageUrl
+import com.github.midros.tmdb.utils.ConstFun.showPopupMenu
+import com.github.midros.tmdb.utils.ConstFun.openDrawOverPermissionSetting
+import com.github.midros.tmdb.utils.ConstStrings
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.show
 import kotlinx.android.synthetic.main.fragment_details_top.*
 import org.song.videoplayer.*
+import org.song.videoplayer.floatwindow.FloatParams
+import org.song.videoplayer.media.AndroidMedia
+import org.song.videoplayer.rederview.IRenderView
 import javax.inject.Inject
 
 /**
@@ -41,6 +38,7 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     private var it:String?=null
     private var tm:String?=null
     private var im:String?=null
+    private var urlVideo : String?=null
 
     @Inject lateinit var interactor: InteractorFragmentDetails<InterfaceFragmentDetails.View>
 
@@ -68,7 +66,31 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
         click_keyboard_top.setOnClickListener { getBaseActivity().setMinimizeDraggable() }
         click_menu_top.setOnClickListener { showPopupMenu() }
         click_menu_external_top.setOnClickListener { showPopupMenuExternal() }
-        click_trailers_top.setOnClickListener { video_player.play(); showPlayer() }
+        click_window_float_top.setOnClickListener { showWindowFloat() }
+        click_trailers_top.setOnClickListener { if (urlVideo!=null) { video_player.play(); showPlayer() } }
+    }
+
+    private fun showWindowFloat(){
+        if (video_player.currentMode == IVideoPlayer.MODE_WINDOW_FLOAT_ACT) return
+        var params = video_player.floatParams
+        if (params==null){
+            params = FloatParams()
+            params.x = 0
+            params.y = 0
+            params.w = resources.displayMetrics.widthPixels * 1 / 2
+            params.h = params.w * 9 / 16
+            params.round = 10
+            params.fade = 1f
+            params.canMove = true
+            params.canCross = true
+        }
+        params.systemFloat = true
+        if (video_player.isWindowFloatMode) video_player.quitWindowFloat()
+        else if (!video_player.enterWindowFloat(params)) {
+            if (video_player.isPlaying) video_player.pause()
+            getBaseActivity().openDrawOverPermissionSetting()
+        }
+        if (video_player.isSystemFloatMode) getBaseActivity().moveActivityToBack()
     }
 
     private fun showPopupMenuExternal() = context!!.showPopupMenuExternal(click_menu_external_top,fb,tw,it,tm!!,im)
@@ -114,7 +136,7 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     }
 
     override fun setDataTrailer(data: ObjectTrailers){
-        if (!data.results.isEmpty()) {
+        if (data.results.isNotEmpty()) {
             if (!data.results[0].key.isNullOrEmpty()) setTrailer(data.results[0])
             else setImage()
         }
@@ -124,11 +146,17 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     override fun setCueVideo(key: String) {
         context!!.getUrlYoutube(key){
             if (it!=null){
+                urlVideo = it
                 showPlayer()
+                video_player.isWindowGesture = true
                 video_player.release()
+                video_player.setAspectRatio(IRenderView.AR_MATCH_PARENT)
+                video_player.setDecodeMedia(AndroidMedia::class.java)
                 video_player.setUp(it,title)
                 video_player.play()
-            }else setImage()
+            }else {
+                setImage()
+            }
         }
     }
 
@@ -153,8 +181,10 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     }
 
     override fun setImage() {
+        urlVideo = null
         checkImage = true
         clickTrailers(false)
+        fragmentYoutube(false)
         progressDetails(false)
         clickMenuHideShow(false)
         imageTrailers(true)
@@ -170,8 +200,14 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
             checkImage = false
             clickMenuHideShow(true)
             setImageUrl("${ConstStrings.BASE_URL_IMAGE_YOUTUBE}${data.key}${ConstStrings.SIZE_IMG_YOUTUBE}")
+            video_player.isWindowGesture = true
             video_player.release()
-            if (it!=null) video_player.setUp(it,title)
+            video_player.setAspectRatio(IRenderView.AR_MATCH_PARENT)
+            video_player.setDecodeMedia(AndroidMedia::class.java)
+            if (it!=null) {
+                urlVideo = it
+                video_player.setUp(it,title)
+            } else setImage()
             video_player.setPlayListener(this)
         }
 
@@ -200,6 +236,7 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     override fun showPlayer() {
         clickTrailers(false)
         imageTrailers(false)
+        fragmentYoutube(true)
     }
 
     override fun hiddenViewsPlayer() {
@@ -219,9 +256,16 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     override fun onEvent(what: Int, vararg extra: Int?) {
         when(what){
             DemoQSVideoView.EVENT_CONTROL_VIEW -> if (video_player.isPlaying) hiddenViewsPlayer()
-            DemoQSVideoView.EVENT_CLICK_VIEW -> showViewsPlayer()
+            DemoQSVideoView.EVENT_CLICK_VIEW -> {
+                showViewsPlayer()
+                if (video_player.isWindowFloatMode) if (extra[0] == R.id.help_float_close ) getBaseActivity().finish()
+            }
             DemoQSVideoView.EVENT_COMPLETION -> if (getBaseActivity().isMaximized()) showViewsPlayer()
         }
+    }
+
+    override fun onDestroyPlayer() {
+        if (video_player.isSystemFloatMode) video_player.quitWindowFloat()
     }
 
     private fun clickKeyboardHideShow(b: Boolean) {
@@ -231,6 +275,7 @@ class FragmentDetailsTop : BaseFragment(), InterfaceFragmentDetails.View, PlayLi
     private fun clickMenuHideShow(b: Boolean) {
         if (b) click_menu_top.show() else click_menu_top.hide()
         if (b) click_menu_external_top.show() else click_menu_external_top.hide()
+        if (b) click_window_float_top.show() else click_window_float_top.hide()
     }
 
     private fun clickTrailers(b: Boolean) {

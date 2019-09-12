@@ -10,8 +10,7 @@ import com.github.midros.tmdb.data.model.ObjectsSearch
 import com.github.midros.tmdb.ui.activities.base.BaseFragment
 import com.github.midros.tmdb.ui.adapters.RecyclerAdapterSearch
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.openActivityPeople
-import com.github.midros.tmdb.utils.schedulers.SchedulerProvider
+import com.github.midros.tmdb.utils.ConstFun.openActivityPeople
 import com.google.gson.JsonArray
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.show

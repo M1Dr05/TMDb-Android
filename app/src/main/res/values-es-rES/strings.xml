@@ -47,4 +47,7 @@
     <string name="decease">Fallecimiento:</string>
     <string name="a_review_by">"Una revisión por "</string>
     <string name="title_dialog">Mensaje</string>
+    <string name="share">Compartir</string>
+    <string name="rate_me">Califícame</string>
+    <string name="this_app_uses_the_movie_db_api_but_is_not_endorsed_or_certified_by_the_movie_db">Esta aplicación usa TheMovieDb api pero no está respaldada ni certificada por TheMovieDb</string>
 </resources>

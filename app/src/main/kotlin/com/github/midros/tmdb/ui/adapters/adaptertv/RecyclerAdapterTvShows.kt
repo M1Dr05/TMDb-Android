@@ -21,29 +21,27 @@ class RecyclerAdapterTvShows @Inject constructor(private var context: Context) :
     private val viewTypeTvDefault = 1
     private val viewTypeTvHorizontal = 2
     private val viewTypeTvCount3 = 3
+    private val adType = 4
     private var viewType:Int=1
 
     private var list: MutableList<PojoResultsTv> = mutableListOf()
     private var onItemTvClickListener: OnItemTvClickListener? = null
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return when(viewType){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when(viewType){
             viewTypeTvHorizontal-> ViewHolderTvHorizontal(context.inflateLayout(R.layout.item_adapter_poster, parent, false))
             viewTypeTvCount3-> ViewHolderTvCount3(context.inflateLayout(R.layout.item_adapter_multi, parent, false))
             else -> ViewHolderTvDefault(context.inflateLayout(R.layout.item_adapter, parent, false))
         }
-    }
+
 
     override fun getItemCount(): Int = list.size
 
-    override fun getItemViewType(position: Int): Int {
-        return when (viewType) {
+    override fun getItemViewType(position: Int): Int = when (viewType) {
             2 -> viewTypeTvHorizontal
             3 -> viewTypeTvCount3
             else -> viewTypeTvDefault
         }
-    }
 
     fun setType(type: Int){
         this.viewType = type
@@ -62,7 +60,6 @@ class RecyclerAdapterTvShows @Inject constructor(private var context: Context) :
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val data = list[position]
         val backdrop = if (!data.backdrop_path.isNullOrEmpty()) data.backdrop_path else ""
-
         when(holder.itemViewType){
             viewTypeTvDefault->{
                 (holder as ViewHolderTvDefault).bind(data)
@@ -83,7 +80,6 @@ class RecyclerAdapterTvShows @Inject constructor(private var context: Context) :
                 }
             }
         }
-
     }
 
     interface OnItemTvClickListener {

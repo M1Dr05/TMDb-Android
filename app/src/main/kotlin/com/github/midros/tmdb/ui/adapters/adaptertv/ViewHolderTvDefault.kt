@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.github.midros.tmdb.data.model.PojoResultsTv
 import com.github.midros.tmdb.data.preference.DataSharePreference.getGenderTvShow
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.getReformatDate
-import com.github.midros.tmdb.utils.setImageUrl
+import com.github.midros.tmdb.utils.ConstFun.getReformatDate
+import com.github.midros.tmdb.utils.ConstFun.setImageUrl
 import kotlinx.android.synthetic.main.item_adapter.view.*
 
 /**

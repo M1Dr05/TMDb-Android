@@ -8,7 +8,7 @@ import android.widget.ImageView
 import com.github.midros.tmdb.R
 import com.github.midros.tmdb.data.model.ObjectsDetailsImages
 import com.github.midros.tmdb.utils.ConstStrings
-import com.github.midros.tmdb.utils.setImageUrl
+import com.github.midros.tmdb.utils.ConstFun.setImageUrl
 import com.pawegio.kandroid.inflateLayout
 import kotlinx.android.synthetic.main.item_adapter_poster.view.*
 import kotlinx.android.synthetic.main.item_images.view.*

@@ -12,8 +12,8 @@ import com.github.midros.tmdb.ui.activities.base.BaseFragment
 import com.github.midros.tmdb.ui.adapters.RecyclerAdapterPeople
 import com.github.midros.tmdb.utils.ConstStrings
 import com.github.midros.tmdb.utils.OnScrollListenerUtils
-import com.github.midros.tmdb.utils.animatedView
-import com.github.midros.tmdb.utils.openActivityPeople
+import com.github.midros.tmdb.utils.ConstFun.animatedView
+import com.github.midros.tmdb.utils.ConstFun.openActivityPeople
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.runDelayedOnUiThread
 import com.pawegio.kandroid.show

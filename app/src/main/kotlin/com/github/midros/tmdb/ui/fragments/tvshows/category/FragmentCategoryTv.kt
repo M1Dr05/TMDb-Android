@@ -11,7 +11,7 @@ import com.github.midros.tmdb.ui.activities.base.BaseFragment
 import com.github.midros.tmdb.ui.adapters.adaptertv.RecyclerAdapterTvShows
 import com.github.midros.tmdb.utils.ConstStrings
 import com.github.midros.tmdb.utils.OnScrollListenerUtils
-import com.github.midros.tmdb.utils.animatedView
+import com.github.midros.tmdb.utils.ConstFun.animatedView
 import com.daimajia.androidanimations.library.Techniques
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.runDelayedOnUiThread
@@ -31,7 +31,6 @@ class FragmentCategoryTv : BaseFragment(), InterfaceCategoryTv.ViewCategoryTv, R
 
     @field:Named(ConstStrings.DEFAULT)
     @Inject lateinit var lManager: GridLayoutManager
-
 
     fun newInstance(category: String): FragmentCategoryTv {
         val fragment = FragmentCategoryTv()
@@ -98,6 +97,7 @@ class FragmentCategoryTv : BaseFragment(), InterfaceCategoryTv.ViewCategoryTv, R
     }
 
     private fun showList(){
+        hiddenLoading()
         runDelayedOnUiThread(200) {
             if (progress_tv != null) progress_tv.hide()
             if (list_tv_show != null){

@@ -29,7 +29,7 @@ class InteractorCategoryTv<V : InterfaceCategoryTv.ViewCategoryTv> @Inject const
                 .subscribeOn(SchedulerProvider.io())
                 .observeOn(SchedulerProvider.ui())
                 .doOnSubscribe { if (isViewNull()) getView().showLoading() }
-                .doFinally { if (isViewNull()) getView().hiddenLoading() }
+                //.doFinally { if (isViewNull()) getView().hiddenLoading() }
                 .subscribe({ if (isViewNull()) getView().addItemRecycler(it) }, { if (isViewNull()) getView().hiddenLoadingFailed() }))
     }
 

@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".ui.activities.splash.SplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
@@ -35,8 +35,11 @@
         <activity android:name=".ui.activities.detailspeople.DetailsPeopleActivity"
             android:theme="@style/AppTheme.Scroll"
             android:configChanges="orientation|screenSize"/>
+
         <activity android:name=".ui.activities.image.ImageActivity"
             android:theme="@style/AppTheme.Transparent"/>
+
+        <activity android:name=".ui.activities.about.AboutActivity"/>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

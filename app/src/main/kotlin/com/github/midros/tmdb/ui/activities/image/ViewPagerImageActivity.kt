@@ -10,7 +10,7 @@ import com.github.midros.tmdb.ui.adapters.adapterimages.ViewPagerImages
 import com.github.midros.tmdb.data.model.ObjectImages
 import com.github.midros.tmdb.data.model.ObjectImagesPerson
 import com.github.midros.tmdb.ui.activities.base.BaseActivity
-import com.github.midros.tmdb.utils.pageTransformer
+import com.github.midros.tmdb.utils.ConstFun.pageTransformer
 import kotlinx.android.synthetic.main.activity_view_image.*
 import javax.inject.Inject
 

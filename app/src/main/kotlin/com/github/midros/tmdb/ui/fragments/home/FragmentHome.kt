@@ -15,12 +15,11 @@ import com.github.midros.tmdb.ui.adapters.adaptermovie.RecyclerAdapterMovies
 import com.github.midros.tmdb.ui.adapters.adaptertv.RecyclerAdapterTvShows
 import com.github.midros.tmdb.utils.ConstStrings
 import com.github.midros.tmdb.utils.MyCountDownTimer
-import com.github.midros.tmdb.utils.animatedView
-import com.github.midros.tmdb.utils.parallaxPageTransformer
+import com.github.midros.tmdb.utils.ConstFun.animatedView
+import com.github.midros.tmdb.utils.ConstFun.parallaxPageTransformer
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.show
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.item_viewpager.view.*
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -40,7 +39,6 @@ class FragmentHome : BaseFragment() , InterfaceFragmentHome.View, RecyclerAdapte
     @Inject lateinit var lManagerOnTv : GridLayoutManager
 
     private var timer: MyCountDownTimer?=null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +73,7 @@ class FragmentHome : BaseFragment() , InterfaceFragmentHome.View, RecyclerAdapte
         interactor.getOnTv()
     }
 
-    fun onClickView(){
+    private fun onClickView(){
         btn_see_all_now_playing.setOnClickListener {
             getBaseActivity().setSelectedNavigationMovie(R.id.nav_now_playing)
         }

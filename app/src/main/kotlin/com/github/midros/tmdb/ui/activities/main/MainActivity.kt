@@ -11,10 +11,15 @@ import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import com.github.midros.tmdb.R
+import com.github.midros.tmdb.ui.activities.about.AboutActivity
 import com.github.midros.tmdb.ui.activities.base.BaseActivity
 import com.github.midros.tmdb.ui.fragments.details.FragmentDetailsBottom
 import com.github.midros.tmdb.ui.fragments.details.FragmentDetailsTop
+import com.github.midros.tmdb.utils.ConstFun.openActivity
+import com.github.midros.tmdb.utils.ConstFun.openPlayStore
+import com.github.midros.tmdb.utils.ConstFun.openShareIn
 import com.github.midros.tmdb.utils.ConstStrings
+import com.github.midros.tmdb.utils.ConstStrings.Companion.BASE_URL_BROWSER_PLAY
 import com.github.midros.tmdb.utils.ConstStrings.Companion.ID
 import com.github.midros.tmdb.utils.ConstStrings.Companion.IMAGE
 import com.github.midros.tmdb.utils.ConstStrings.Companion.TITLE
@@ -25,7 +30,6 @@ import com.pawegio.kandroid.show
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import com.github.midros.tmdb.utils.KeyboardUtils
-import com.github.midros.tmdb.utils.getVersion
 import com.pawegio.kandroid.hide
 import com.pawegio.kandroid.runDelayedOnUiThread
 
@@ -34,8 +38,6 @@ import com.pawegio.kandroid.runDelayedOnUiThread
  * Created by luis rafael on 16/02/19.
  */
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MaterialSearchView.SearchViewListener, MaterialSearchView.OnQueryTextListener, DraggableListener, InterfaceMainView, KeyboardUtils.SoftKeyboardToggleListener {
-
-    private var scroll:Int =0
 
     @Inject
     lateinit var interactor: InterfaceMainInteractor<InterfaceMainView>
@@ -81,6 +83,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     override fun onDestroy() {
+        draggableTopFragment.onDestroyPlayer()
         interactor.onDetach()
         clearDisposable()
         super.onDestroy()
@@ -145,7 +148,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.nav_movies -> if (!item.isChecked) setSelectedNavigationMovie(R.id.nav_popular_movies)
             R.id.nav_tv_shows -> if (!item.isChecked) setSelectedNavigationTv(R.id.nav_popular_tv)
             R.id.nav_people -> if (!item.isChecked) interactor.setFragmentPeople()
-            R.id.nav_about -> showDialog(R.string.title_dialog,getVersion(),android.R.string.ok){ it.dismiss() }.show()
+            R.id.nav_about -> openActivity<AboutActivity>()
+            R.id.nav_share -> openShareIn("$BASE_URL_BROWSER_PLAY$packageName")
+            R.id.nav_rate -> openPlayStore()
         }
         return true
     }
@@ -268,6 +273,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 setMaximizeDraggable(id,title,type,image)
             }
         }
+    }
+
+    override fun moveActivityToBack() {
+        moveTaskToBack(true)
     }
 
 }

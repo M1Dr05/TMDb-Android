@@ -22,7 +22,6 @@ class ImageActivity : BaseActivity() {
         setActionBar()
         val url = intent.getStringExtra(ConstStrings.IMAGE)
         supportPostponeEnterTransition()
-
         id_image.setImageUrl("${ConstStrings.BASE_URL_IMAGE}${ConstStrings.SIZE_IMAGE_W780}$url")
 
     }
